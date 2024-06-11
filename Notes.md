@@ -78,8 +78,7 @@ _[innerHTML ](https://www.javascripttutorial.net/javascript-dom/javascript-inner
 
 _[after ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-after/) - Insert a node after an element._<br>
 `Syntax : Element.after(node)`<br>
-`For example, suppose you have a <h1> element and you want to insert a <p> element after it, you can use the after() method like this :`<br>
-`h1.after(p)`
+`For example, suppose you have a <h1> element and you want to insert a <p> element after it, you can use the after() method like this : h1.after(p)`<br>
 
 _[append ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-append/) - Insert a node after the last child node of a parent node._<br>
 `Syntax : parentNode.append()`
@@ -102,8 +101,7 @@ _[insertBefore ( ) ](https://www.javascripttutorial.net/javascript-dom/javascrip
 
 _[style property](https://www.javascripttutorial.net/javascript-dom/javascript-style/) - Get or set inline styles of an element._<br>
 `Syntax : element.style`<br>
-`For example, to set the color of an element to red, you use the following code :`<br>
-`element.style.color = 'red';`
+`For example, to set the color of an element to red, you use the following code : element.style.color = 'red';`<br>
 
 <br>
 
