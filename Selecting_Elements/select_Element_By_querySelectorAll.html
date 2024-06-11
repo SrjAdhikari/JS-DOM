@@ -1,0 +1,62 @@
+<!--* The querySelectorAll() method allow us to select all elements that match a CSS selector or a group of CSS selectors. -->
+
+<!--* The querySelectorAll() method returns a static NodeList of elements that match the CSS selector. If no element matches, it returns an empty NodeList. -->
+
+<!--* To convert the NodeList to an array, you use the Array.from() method like this :
+<!--* let nodeList = document.querySelectorAll(selector);
+<!--* let elements = Array.from(nodeList); -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector() DOM</title>
+</head>
+<body>
+    <h1>querySelectorAll Example</h1>
+
+    <h2>Red Fruits</h2>
+    <ul class="red">
+        <li>Strawberry</li>
+        <li>Raspberry</li>
+        <li>Cherry</li>
+    </ul
+
+    <h2>Purple Fruits</h2>
+    <ul class="purple">
+        <li>Blackberry</li>
+        <li>Plums</li>
+        <li>Grapes</li>
+    </ul>
+
+    <script>
+        // Select all list items on the page
+        const listItems = document.querySelectorAll('li');
+        console.log(listItems);
+    
+        // Iterate through each list item and log its innerHTML
+        for(let i = 0; i < listItems.length; i++){
+            console.log(listItems[i].innerHTML);
+        }
+    
+        // Select all list items within elements with class 'purple'
+        const purpleItems = document.querySelectorAll('.purple li')
+        console.log(purpleItems);
+    
+        // Iterate through each purple list item and log its innerHTML
+        for(let i = 0; i < purpleItems.length; i++){
+            console.log(purpleItems[i].innerHTML);
+        }
+    
+        // Select all list items within elements with class 'red'
+        const redItems = document.querySelectorAll('.red li');
+        console.log(redItems);
+        
+        // Iterate through each red list item and log its innerHTML
+        for(let i = 0; i < redItems.length; i++){
+            console.log(redItems[i].innerHTML);
+        }
+    </script>
+</body>
+</html>

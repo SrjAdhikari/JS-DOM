@@ -1,0 +1,48 @@
+<!--* The querySelector() is a method of the Element interface. The querySelector() method allows you to select the first element that matches one or more CSS selectors. -->
+
+<!--* If the selector is not valid CSS syntax, the method will raise a SyntaxError exception. If no element matches the CSS selectors, the querySelector() returns null. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>querySelector() Demo</title>
+</head>
+<body>
+    <div class="parent-container">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+    <script>
+        // Select the element with the class 'parent-container' and assign it to the constant 'parent'
+        const parent = document.querySelector('.parent-container');
+        console.log(parent);    // Output the selected parent element to the console
+
+        // Output the children of the parent element to the console
+        console.log(parent.children);
+
+        // Output the second child of the parent element to the console
+        console.log(parent.children[1]);
+
+        // Output the inner HTML of the second child of the parent element to the console
+        console.log(parent.children[1].innerHTML);
+
+        // Alternative approach: Loop through all children of the parent element and output their inner HTML to the console
+        for(let i = 0; i < parent.children.length; i++){
+            console.log(parent.children[i].innerHTML);
+        }
+
+        // Select the element with the class 'day' and assign it to the constant 'day'
+        const day = document.querySelector('.day');
+        console.log(day);   // Output the selected day element to the console
+
+        // Output the parent element of the day element to the console
+        console.log(day.parentElement);
+
+        // Output the next sibling element of the day element to the console
+        console.log(day.nextElementSibling);
+    </script>
+</body>
+</html>
