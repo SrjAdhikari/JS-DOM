@@ -1,0 +1,56 @@
+<!--* The getElementsByClassName() method returns an array-like of objects of the child elements with a specified class name. -->
+
+<!--* The method returns undefined if no element with the class names is found. -->
+
+<!--* When you call the getElementsByClassName() method on the document element, it will search the entire document and return the matched elements : let elements = document.getElementsByClassName(names); -->
+
+<!--* However, when you call the getElementsByClassName() method on a specific element, it will return the descendants of that particular element with the given class name : let elements = rootElement.getElementsByClassName(names); -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript getElementsByClassName DOM</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript getElementsByClassName</title>
+</head>
+<body>
+    <div class = "container">
+        <h1 id = "main-heading" class ="heading">Outdoor Game</h1>
+        <ul>
+            <li class = "list-items">Football</li>
+            <li class = "list-items">Volleyball</li>
+            <li class = "list-items">Cricket</li>
+            <li class = "list-items">Hockey</li>
+            <li class = "list-items">Tennis</li>
+        </ul>
+    </div>
+
+    <script>
+        // Select all elements with the class name 'list-items'
+        const menuItems = document.getElementsByClassName('list-items');
+        
+        // Log the collection of elements to the console
+        console.log(menuItems);
+    
+        // Individual console.log statements to log text content of each element
+        console.log(menuItems[0].textContent);
+        console.log(menuItems[1].textContent);
+        console.log(menuItems[2].textContent);
+        console.log(menuItems[3].textContent);
+        console.log(menuItems[4].textContent);
+    
+        // Alternative: Loop through each selected element and log its text content
+        for(let i = 0; i < menuItems.length; i++){
+            console.log(menuItems[i].textContent);
+        }
+    </script>
+</body>
+</html>

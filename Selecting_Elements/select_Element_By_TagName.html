@@ -1,0 +1,59 @@
+<!--* The getElementsByTagName() method accepts a tag name and returns a live HTMLCollection of elements with the matching tag name in the order in which they appear in the document. -->
+
+<!--* The return collection of the getElementsByTagName() is live, meaning it is automatically updated when elements with the matching tag name are added and/or removed from the document. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript getElementsByTagName() DOM</title>
+</head>
+<body>
+    <div class = "container">
+        <h1 id = "main-heading" class ="heading"> Favourite Movie Franchise</h1>
+        <ul>
+            <li class = "list-items">The Matrix</li>
+            <li class = "list-items">Star Wars</li>
+            <li class = "list-items">Harry Potter</li>
+            <li class = "list-items">Lord of the Rings</li>
+            <li class = "list-items">Marvel</li>
+        </ul>
+
+        <h2>This is first heading</h2>
+        <h2>This is second heading</h2>
+    </div>
+
+    <script>
+        // Get all <li> elements in the document
+        const listItems = document.getElementsByTagName('li');
+        
+        // Log the entire collection of <li> elements
+        console.log(listItems);
+        
+        // Log each individual <li> element (assuming there are at least 5)
+        console.log(listItems[0]);
+        console.log(listItems[1]);
+        console.log(listItems[2]);
+        console.log(listItems[3]);
+        console.log(listItems[4]);
+
+        // Log the text content of each <li> element (assuming there are at least 5)
+        console.log(listItems[0].textContent);
+        console.log(listItems[1].textContent);
+        console.log(listItems[2].textContent);
+        console.log(listItems[3].textContent);
+        console.log(listItems[4].textContent);
+
+        // Get all <h2> elements in the document
+        const heading = document.getElementsByTagName('h2');
+        
+        // Log the entire collection of <h2> elements
+        console.log(heading);
+
+        // Log the text content of each <h2> element (assuming there are at least 2)
+        console.log(heading[0].textContent);
+        console.log(heading[1].textContent);
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!--* The getElementById() is a method of the document object that returns an Element object representing an HTML element with an id matching a specified string. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript getElementsById DOM</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="main-heading">Favourite Company Name</h1>
+        <ul id="items">
+            <li class="list-items" id="item1">Google</li>
+            <li class="list-items" id="item2">Micfosoft</li>
+            <li class="list-items" id="item3">Amazon</li>
+            <li class="list-items" id="item4">Facebook</li>
+            <li class="list-items" id="item5">IBM</li>
+        </ul>
+    </div>
+
+    <p id="first">This is my first paragraph.</p>
+    <p id="second">This is my second paragraph.</p>
+
+    <script>
+        // If we wanted to just read the content of the elements, we can use the textContent property inside the console.log().
+
+        // Get the div element with the ID 'container' and log it and its text content
+        const div = document.getElementById('container');
+        console.log(div);                       // Logs the entire div element
+        console.log(div.textContent);           // Logs the text content of the div element
+
+        // Get the heading element with the ID 'main-heading' and log it and its text content
+        const heading = document.getElementById('main-heading');
+        console.log(heading);                   // Logs the entire heading element
+        console.log(heading.textContent);       // Logs the text content of the heading element
+
+        // Get the element with the ID 'items' and log it and its text content
+        const listItems = document.getElementById('items');
+        console.log(listItems);                 // Logs the entire list items element
+        console.log(listItems.textContent);     // Logs the text content of the list items element
+
+        // Get the paragraph element with the ID 'first' and log it and its text content
+        const paragraph1 = document.getElementById('first');
+        console.log(paragraph1);                // Logs the entire paragraph element
+        console.log(paragraph1.textContent);    // Logs the text content of the first paragraph element
+
+        // Get the paragraph element with the ID 'second' and log it and its text content
+        const paragraph2 = document.getElementById('second');
+        console.log(paragraph2);                // Logs the entire paragraph element
+        console.log(paragraph2.textContent);    // Logs the text content of the second paragraph element
+    </script>
+
+</body>
+</html>

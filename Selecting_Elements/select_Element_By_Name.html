@@ -1,0 +1,38 @@
+<!--* The getElementsByName() method returns a collection of elements with a specified name. The getElementsByName() method returns a live NodeList. -->
+
+<!--* A NodeList is an array-like collection (list) of nodes.
+<!--* The nodes in the list can be accessed by index. The index starts at 0.
+<!--* The length Poperty returns the number of nodes in the list. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript getElementsByName DOM</title>
+</head>
+<body>
+    <!-- Radio buttons with the name 'lang' -->
+    <input type="radio" name="lang" value="English" id="english"> English
+    <input type="radio" name="lang" value="Spanish" id="spanish"> Spanish
+    <input type="radio" name="lang" value="French" id="french"> French
+
+    <script>
+        // Get all elements with the name attribute 'lang'
+        const language = document.getElementsByName('lang');
+        
+        // Log the entire collection of elements with the name 'lang'
+        console.log(language);
+
+        // Log each individual element with the name 'lang' (assuming there are 3)
+        console.log(language[0]);  // Logs the first radio button (English)
+        console.log(language[1]);  // Logs the second radio button (Spanish)
+        console.log(language[2]);  // Logs the third radio button (French)
+        
+        // Log the values of each radio button
+        console.log(language[0].value);  // Logs 'English'
+        console.log(language[1].value);  // Logs 'Spanish'
+        console.log(language[2].value);  // Logs 'French'
+    </script>
+</body>
+</html>
