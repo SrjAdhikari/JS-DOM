@@ -1,0 +1,70 @@
+<!--* To create an HTML element, you use the document.createElement() method -->
+<!--* The document.createElement() accepts an HTML tag name and returns a new Node with the Element type. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS CreateElement DOM</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+    </ul>
+
+    <script>
+        //* ****************************************************
+        //* Creating a new div example
+        //* ****************************************************
+
+        // Create a new div element
+        let div = document.createElement('div');
+        div.id = 'content';                                 // Set the id attribute of the div
+        div.className = 'note';                             // Set the class attribute of the div
+        div.innerHTML = '<p>Create a new element</p>';      // Set the inner HTML of the div to a paragraph
+    
+        // To add a piece of text to a <div>, we can use the innerHTML property as the above, or create a new Text node and append it to the div :
+
+        // Create a new text node and add it to the div
+        let text = document.createTextNode('Example of create element');
+        div.appendChild(text);
+    
+        // Create a new h2 element
+        let h2 = document.createElement('h2');
+        h2.innerHTML = 'Add h2 element to the div';         // Set the inner HTML of the h2 element
+
+        // h2.textContent = 'Add h2 element to the div';    // Alternate way to set the text content of the h2 element
+
+        div.appendChild(h2);  // Append the h2 element to the div
+    
+        // Append the div to the body of the document
+        document.body.appendChild(div);
+
+
+        //* ****************************************************
+        //* Creating new list items (li) example
+        //* ****************************************************
+
+        // Create a new 'li' element and set its inner HTML to 'Products'
+        let li = document.createElement('li');
+        li.innerHTML = 'Products';
+        menu.appendChild(li);               // Append the 'li' element to the 'menu' element
+
+        // Create another 'li' element and set its text content to 'About Us'
+        li = document.createElement('li');
+        li.textContent = 'About Us';
+        menu.appendChild(li);               // Append the 'li' element to the 'menu' element
+
+        // Optionally, create and append a script element
+        // let script = document.createElement('script');
+        // script.src = 'app.js';
+        // document.body.appendChild(script);
+    </script>
+    
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* The document.createElement() creates a new HTML element. -->
+<!--* The element.appendChild() appends an HTML element to an existing element. -->

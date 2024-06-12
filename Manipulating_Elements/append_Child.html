@@ -1,0 +1,89 @@
+<!--* The appendChild() is a method of the Node interface. The appendChild() method allows us to add a node to the end of the list of child nodes of a specified parent node. -->
+
+<!--* Syntax : parentNode.appendChild(childNode); -->
+<!--* In this method, the childNode is the node to append to the given parent node. The appendChild() returns the appended child. -->
+<!--* If the childNode is a reference to an existing node in the document, the appendChild() method moves the childNode from its current position to the new position. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript appendChild() DOM</title>
+</head>
+<body>
+    <ul id="menu">
+
+    </ul>
+
+    <ul id="first-list">
+        <li>Everest</li>
+        <li>Fuji</li>
+        <li>Kilimanjaro</li>
+    </ul>
+
+    <ul id="second-list">
+        <li>Karakoram Range</li>
+        <li>Denali</li>
+        <li>Mont Blanc</li>
+    </ul>
+
+    <script>
+        //* ****************************************************
+        //* Basic appendChild() example
+        //* ****************************************************
+
+        // Function to create a menu item with the given name
+        function createMenuItem(name) {
+            // Create a new 'li' element
+            let li = document.createElement('li');
+            // Set the text content of the 'li' element to the provided name
+            li.textContent = name;
+            // Return the created 'li' element
+            return li;
+        }
+
+        // Get the 'ul' element with the id 'menu'
+        const menu = document.querySelector('#menu');
+
+        // Add menu items to the 'ul#menu' element
+        menu.appendChild(createMenuItem('Home'));           // Add 'Home' menu item
+        menu.appendChild(createMenuItem('Services'));       // Add 'Services' menu item
+        menu.appendChild(createMenuItem('About Us'));       // Add 'About Us' menu item
+        menu.appendChild(createMenuItem('Contact'));        // Add 'Contact' menu item
+
+        // How it works : 
+        // First, the createMenuItem() function creates a new list item element with a specified name by using the createElement() method.
+        // Second, select the <ul> element with id menu using the querySelector() method.
+        // Third, call the createMenuItem() function to create a new menu item and use the appendChild() method to append the menu item to the <ul> element
+        
+
+        //* ****************************************************
+        //* Moving a node within the document example
+        //* ****************************************************
+
+        // Get the 'ul' element with the id 'first-list'
+        const firstList = document.querySelector('#first-list');
+
+        // Get the first child element of 'firstList'
+        const everest = firstList.firstElementChild;
+
+        // Get the 'ul' element with the id 'second-list'
+        const secondList = document.querySelector('#second-list');
+
+        // Move the first child element from 'first-list' to 'second-list'
+        secondList.appendChild(everest);
+
+        // How it works:
+        // First, select the first element by its id (first-list) using the querySelector() method.
+        // Second, select the first child element from the first list.
+        // Third, select the second element by its id (second-list) using the querySelector() method.
+        // Finally, append the first child element from the first list to the second list using the appendChild() method.
+
+    </script>
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* Use appendChild() method to add a node to the end of the list of child nodes of a specified parent node. -->
+<!--* The appendChild() can be used to move an existing child node to a new position within the document. -->

@@ -1,0 +1,30 @@
+<!--* The innerHTML is a property of the Element that allows you to get or set the HTML markup contained within the element. -->
+
+<!--* The innerHTML property returns the current HTML source of the document, including all changes that have been made since the page was loaded. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript innerHTML DOM</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Services</li>
+    </ul>
+
+    <script>
+        let menu = document.getElementById('menu');
+        console.log(menu.innerHTML);
+
+        let li = document.createElement('li');
+        li.textContent = 'About Us';
+        menu.appendChild(li);
+        console.log(menu.innerHTML);
+
+        
+    </script>
+</body>
+</html>
