@@ -1,0 +1,49 @@
+<!--* To replace an HTML element, we use the node.replaceChild() method -->
+<!--* Syntax : parentNode.replaceChild(newChild, oldChild); -->
+
+<!--* In this method, the newChild is the new node to replace the oldChild node which is the old child node to be replaced. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM: Replace Elements</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>HomePage</li>
+        <li>Services</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+
+    <script>
+        // Select the element with the id 'menu'
+        let menu = document.querySelector('#menu');
+
+        // Create a new list item element
+        let li = document.createElement('li');
+
+        // Set the text content of the new list item to 'About Us'
+        li.innerText = 'About Us';
+
+        // Replace the third child of the 'menu' element with the newly created list item
+        menu.replaceChild(li, menu.children[2]);
+
+
+        // Create another new list item element
+        li = document.createElement('li');
+
+        // Set the text content of the new list item to 'Home'
+        li.textContent = 'Home';
+        
+        // Replace the first child of the 'menu' element with the newly created list item
+        menu.replaceChild(li, menu.firstElementChild);
+
+    </script>
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* Use Node.replaceChild() to replace a child element of a node with a new element. -->

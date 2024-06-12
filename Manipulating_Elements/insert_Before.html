@@ -1,0 +1,39 @@
+<!--* To insert a node before another node as a child node of a parent node, you use the parentNode.insertBefore() method -->
+<!--* Syntax : parentNode.insertBefore(newNode, existingNode); -->
+
+<!--* In this method : -->
+<!--* The newNode is the new node to be inserted. -->
+<!--* The existingNode is the node before which the new node is inserted. If the existingNode is null, the insertBefore() inserts the newNode at the end of the parentNode‘s child nodes. -->
+<!--* The insertBefore() returns the inserted child node. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript insertBefore()</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Services</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+    </ul>
+
+    <script>
+        let menu = document.querySelector('#menu');
+        let li = document.createElement('li');
+        li.textContent = 'Home';
+
+        menu.insertBefore(li, menu.firstElementChild);
+
+        // How it works :
+        // First, get the ul element with the id menu by using the querySelector() method.
+        // Second, create a new list item using the createElement() method.
+        // Third, insert the list item element before the first child element of the menu element using the insertBefore() method.
+    </script>
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* Use the parentNode.insertBefore() to insert a new node before an existing node as a child node of a parent node. -->

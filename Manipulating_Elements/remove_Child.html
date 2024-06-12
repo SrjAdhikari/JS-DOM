@@ -1,0 +1,68 @@
+<!--* To remove a child element of a node, you use the removeChild() method. -->
+<!--* Syntax : let removeNode = parentNode.removeChild(childNode); -->
+
+<!--* The childNode is the child node of the parentNode that you want to remove. If the childNode is not the child node of the parentNode, the method throws an exception. -->
+
+<!--* The removeChild() returns the removed child node from the DOM tree but keeps it in the memory, which can be used later. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript removeChild() DOM</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Products</li>
+        <li>Services</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+    </ul>
+
+    <ul id="lang">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>Java Us</li>
+        <li>C++ Us</li>
+    </ul>
+
+    <script>
+        // Select the element with the id 'menu'
+        let menu = document.querySelector('#menu');
+
+        // Remove the second child element from the 'menu' element
+        menu.removeChild(menu.children[1]);
+
+        // Remove the last child element from the 'menu' element
+        menu.removeChild(menu.lastElementChild);
+
+
+        // How it works :
+        // First, get the ul element with the id menu by using the querySelector() method.
+        // Then, remove the second and last element of the ul element by using the removeChild() method. The menu.children[1] & menu.lastElementChild property returns the seccond & last child element of the menu.
+
+
+        //* ****************************************************
+        //* Removing all child nodes of an element
+        //* ****************************************************
+
+        // Steps : 
+        // Get the first node of the element using the firstChild property.
+        // Repeatedly removing the child node until there are no child nodes left.
+
+        let language = document.querySelector('#lang');
+
+        // Loop through all child elements of the 'language' node and remove them one by one
+        while(language.firstChild){
+            menu.removeChild(menu.firstChild);
+        }
+    </script>
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* Use parentNode.removeChild() to remove a child node from a parent node. -->
+<!--* The parentNode.removeChild() throws an exception if the child node cannot be found in the parent node. -->

@@ -1,0 +1,57 @@
+<!--* The parentNode.append() method inserts a set of Node objects or DOMString objects after the last child of a parent node.  -->
+<!--* parentNode.append(...nodes); -->
+<!--* parentNode.append(...DOMStrings); -->
+
+<!--* The append() method will insert DOMString objects as Text nodes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript append() DOM</title>
+</head>
+<body>
+    <ul id="app">
+        <li>JavaScript</li>
+    </ul>
+
+    <div id="container">
+
+    </div>
+    
+    <script>
+        //* ****************************************************
+        //* Using the append() method to append an element example
+        //* ****************************************************
+
+        let app = document.querySelector('#app');
+        let language = ['TypeScript', 'HTML', 'CSS', 'C++'];
+
+        let nodes = language.map((lang) => {
+            let li = document.createElement('li');
+            li.innerText = lang;
+            return li;
+        });
+        app.append(...nodes);
+
+        // How it works :
+        // First, select the ul element by its id by using the querySelector() method.
+        // Second, declare an array of languages.
+        // Third, for each language, create a new li element with the innerText is assigned to the language.
+        // Finally, append li elements to the ul element by using the append() method.
+
+
+        //* ****************************************************
+        //* Using the append() method to append an element example
+        //* ****************************************************
+
+        let div = document.querySelector('#container');
+        div.append('append() method');
+        console.log(div.textContent);   // Output -> append() method
+    </script>
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* Use the parentNode.append() method to append a set of Node objects or DOMString objects after the last child node of the parentNode. -->

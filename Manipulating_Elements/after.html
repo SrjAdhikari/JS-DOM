@@ -1,0 +1,101 @@
+<!--* The after() is a method of the Element type. The element.after() method allows you to insert one or more nodes after the element. -->
+
+<!--* To insert multiple nodes after an element, you pass the nodes to the after() method as follows : -->
+<!--* Element.after(node1, node2, ... nodeN) -->
+
+<!--* The after() method also accepts one or more strings. In this case, the after() method treats the strings as Text nodes : -->
+<!--* Element.after(str1, str2, ... strN) -->
+
+<!--* The after() method returns undefined. If a node cannot be inserted, it’ll throw a HierarchyRequestError exception. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM - after()</title>
+</head>
+<body>
+    <h1>JavaScript DOM - after()</h1>
+
+    <ul>
+        <li>Angular</li>
+        <li>Vue</li>
+    </ul>
+
+    <button>Click Here</button>
+    <br />
+    <button id="btn">Click Me</button>
+
+    <script>
+        //* ****************************************************
+        //* Using JavaScript after() to insert a node after an element
+        //* ****************************************************
+
+        // Select the first <h1> element in the document
+        const h1 = document.querySelector('h1');
+        // Create a new <p> element
+        const p = document.createElement('p');
+        // Set the inner text of the <p> element
+        p.innerText = 'JavaScript DOM - after()';
+
+        // Insert the <p> element immediately after the <h1> element
+        h1.after(p);
+
+        // How it works:
+        // First, get the heading element using the querySelector() method.
+        // Second, create a new paragraph element and set its innerText.
+        // Third, insert the <p> element after the <h1> element.
+
+        
+        //* ****************************************************
+        //* Using JavaScript after() to insert multiple nodes after an element
+        //* ****************************************************
+
+        // Select the first <ul> element in the document
+        const list = document.querySelector('ul');
+        // Define an array of list item texts
+        const listItems = ['React', 'Meteor', 'Polymer'];
+
+        // Map over the array to create <li> elements for each text
+        const items = listItems.map((listItem) => {
+            // Create a new <li> element
+            const item = document.createElement('li');
+            // Set the inner text of the <li> element
+            item.innerText = listItem;
+            // Return the <li> element
+            return item;
+        });
+
+        // Insert the new <li> elements after the last child of the <ul>
+        list.lastChild.after(...items);
+
+        // How it works :
+        // First, select the ul element using the querySelector() method.
+        // Second, define an array of strings. 
+        // Third, transform the array of strings into an array of li elements using the map() method.
+        // Finally, insert the list item elements after the last child of the ul element
+        // Note that the ...items uses the spread operator to spread out the element of the items array.
+
+
+        //* ****************************************************
+        //* Using JavaScript after() to insert multiple nodes after an element
+        //* ****************************************************
+
+        // Select the first button element in the document
+        const button = document.querySelector('button');
+        // Insert the heart emoji after the first child node of the button
+        button.firstChild.after(' 🧡');
+        // Log the first child node of the button to the console
+        console.log(button.firstChild);     // Output -> "Click Here"
+
+        // Select the element with the id "btn"
+        const btn = document.querySelector('#btn');
+        // Insert the heart emoji after the btn element
+        btn.after(' 🧡');
+    </script>
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* Use the element.after() method to insert one or more nodes after the element. -->

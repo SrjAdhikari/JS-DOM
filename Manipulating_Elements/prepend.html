@@ -1,0 +1,57 @@
+<!--* The prepend() method inserts a set of Node objects or DOMString objects before the first child of a parent node  -->
+<!--* parentNode.prepend(...nodes); -->
+<!--* parentNode.prepend(...DOMStrings); -->
+
+<!--* The prepend() method inserts DOMString objects as Text nodes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript append() DOM</title>
+</head>
+<body>
+    <ul id="app">
+        <li>HTML</li>
+    </ul>
+
+    <div id="container">
+        <p>This is a paragraph.</p>
+    </div>
+    
+    <script>
+        //* ****************************************************
+        //* Using the prepend() method to prepend an element example
+        //* ****************************************************
+
+        let app = document.querySelector('#app');
+        let language = ['TypeScript', 'JavaScript', 'CSS'];
+
+        let nodes = language.map((lang) => {
+            let li = document.createElement('li');
+            li.innerText = lang;
+            return li;
+        });
+        app.prepend(...nodes);
+
+        // How it works :
+        // First, select the ul element by its id by using the querySelector() method.
+        // Second, declare an array of languages.
+        // Third, for each language, create a new li element with the innerText is assigned to the language.
+        // Finally, prepend the li elements to the ul element by using the prepend() method.
+
+
+        //* ****************************************************
+        //* Using the prepend() method to prepend text to an element example
+        //* ****************************************************
+
+        let div = document.querySelector('#container');
+        div.prepend('prepend() method');
+        console.log(div.textContent);   // Output -> prepend() method
+    </script>
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* Use the parentNode.prepend() method to prepend a list of Node objects or DOMString objects before the first child node of the parent node. -->
