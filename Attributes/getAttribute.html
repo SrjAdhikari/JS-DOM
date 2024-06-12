@@ -1,0 +1,50 @@
+<!--* To get the value of an attribute on a specified element, we call the getAttribute() method of the element -->
+<!--* Syntax : let value = element.getAttribute(name); -->
+
+<!--* The getAttribute() accepts an argument which is the name of the attribute from which you want to return the value. -->
+
+<!--* If the attribute exists on the element, the getAttribute() returns a string that represents the value of the attribute. In case the attribute does not exist, the getAttribute() returns null.If the attribute exists on the element, the getAttribute() returns a string that represents the value of the attribute. In case the attribute does not exist, the getAttribute() returns null. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS getAttribute() DOM</title>
+</head>
+<body>
+    <a href="https://www.javascripttutorial.net" 
+        target="_blank" 
+        id="js">JavaScript DOM Tutorial
+    </a>
+    <br>
+    <a href="https://www.javascripttutorial.net" 
+        id="dom">DOM
+    </a>
+
+    <script>
+        let link = document.querySelector('#js');
+        // Check if the element exists
+        if (link) {
+            // Get the value of the 'target' attribute from the link element
+            let target = link.getAttribute('target');
+            console.log(target);    // Output -> _blank
+        }
+
+        // How it works :
+        // First, select the link element with the id js using the querySelector() method.
+        // Second, get the target attribute of the link by calling the getAttribute() of the selected link element.
+        // Third, show the value of the target on the console window.
+
+        link = document.querySelector('#dom');
+        if (link) {
+            let target = link.getAttribute('target');
+            console.log(target);    // Output -> null
+        }
+    </script>
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* Get the value of an attribute of a specified element by calling the getAttribute() method on the element. -->
+<!--* The getAttribute() returns null if the attribute does not exist. -->

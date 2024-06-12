@@ -1,0 +1,35 @@
+<!--* To check whether an element has a specified attribute or not, we use the hasAttribute() method -->
+<!--* Syntax : let result = element.hasAttribute(name); -->
+
+<!--* In this syntax, name specifies the attribute name you want to check in the element. -->
+
+<!--* The hasAttribute() returns true if the element contains the specified attribute or false otherwise. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS hasAttribute() Demo</title>
+</head>
+<body>
+
+    <button id="btnSend" disabled>Send</button>
+
+    <script>
+        let btn = document.querySelector('#btnSend');
+        // Check if the element exists
+        if (btn) {
+            // Determine if the 'disabled' attribute is present on the button
+            let disabled = btn.hasAttribute('disabled');
+            console.log(disabled);      // Output -> True
+        }
+
+        // How it works :
+        // Select the button with the id btnSend by using the querySelector() method.
+        // Check if the button has the disabled attribute by calling the hasAttribute() method on the <button> element.
+    </script>
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* Use the hasAttribute() method to check if an element contains a specified attribute. -->

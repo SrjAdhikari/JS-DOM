@@ -1,0 +1,43 @@
+<!--* To set the value of an attribute on a specified element, we use the setAttribute() method -->
+<!--* Syntax : element.setAttribute(name, value); -->
+
+<!--* The name parameter specifies the attribute name whose value is set. It’s automatically converted to lowercase if you call the setAttribute() on an HTML element. -->
+
+<!--* The value parameter specifies the value to assign to the attribute. It’s automatically converted to a string if you pass a non-string value to the method. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS setAttribute() DOM</title>
+</head>
+<body>
+    <button id="sendBtn">Send</button>
+
+    <script>
+        let btn = document.querySelector('#sendBtn');
+
+        // Check if the 'btn' element exists
+        if(btn){
+            // Set the 'name' attribute of the 'btn' element to 'send'
+            btn.setAttribute('name', 'send');
+            // Disable the 'btn' element by setting the 'disabled' attribute
+            btn.setAttribute('disabled', '');
+            // Set the 'title' attribute of the button element to provide additional information
+            btn.setAttribute('title', 'This is a button');
+        }
+
+        // How it works :
+        // First, select the button with the id sendBtn by using the querySelector() method.
+        // Second, set the value of the name attribute to send using the setAttribute() method.
+        // Third, set the value of the disabled attribute so that when users click the button, it will do nothing.
+
+        // Note that the disabled attribute is special because it is a Boolean attribute. If a Boolean attribute is present, whatever value it has, the value is considered to be true. To set the value of a Boolean attribute to false, you need to remove the entire attribute using the removeAttribute() method.
+    </script>
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* Use the setAttribute() to set the value of an attribute on a specified element. -->
+<!--* Setting the value of a Boolean attribute to whatever value, that value will be considered to be true. -->
