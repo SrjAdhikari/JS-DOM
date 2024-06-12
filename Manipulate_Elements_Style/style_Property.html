@@ -1,0 +1,63 @@
+<!--* To set the inline style of an element, we use the style property of that element -->
+<!--* For Example : element.style -->
+
+<!--* The style property returns the read-only CSSStyleDeclaration object that contains a list of CSS properties. -->
+<!--* For example, to set the color of an element to red, you use the following code : element.style.color = 'red'; -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Style Demo</title>
+</head>
+<body>
+    <p id="content">JavaScript Setting Style Demo!</p>
+
+    <ul id="menu">
+        <li>Home</li>
+        <li>Product</li>
+        <li>Contact</li>
+    </ul>
+
+    <script>
+        // Get the reference to the paragraph element with the ID "content"
+        let paragraph = document.querySelector('#content');
+
+        // Set the text color to green
+        paragraph.style.color = 'green';
+
+        // Set the font size to 20 pixels
+        paragraph.style.fontSize = '20px';
+
+        // Set the background color to light grey
+        paragraph.style.backgroundColor = 'lightgrey';
+
+        // Add padding of 10 pixels
+        paragraph.style.padding = '10px';
+
+
+        // Get the reference to the unordered list with the ID "menu"
+        let menu = document.querySelector('#menu');
+
+        // Remove default bullet points
+        menu.style.listStyleType = 'none';
+
+        // Remove default padding
+        menu.style.padding = '0';
+
+        // Style the list items
+        let listItems = menu.querySelectorAll('li');    // Select all list items within the menu
+        listItems.forEach(function(li) {
+            li.style.padding = "10px";                  // Add padding to each list item
+            li.style.borderBottom = "2px solid #fff";   // Add a border bottom to separate items
+            li.style.backgroundColor = 'black';         // Set background color to light grey
+            li.style.color = 'white';                   // Set text color to white
+            li.style.fontSize = '15px';
+        });
+    </script>
+</body>
+</html>
+
+<!--* Summary : -->
+<!--* Use the properties of element.style object to set the inline CSS properties for the HTML element. -->
