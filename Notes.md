@@ -74,7 +74,11 @@ _[appendChild ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript
 `Syntax : parentNode.appendChild(childNode);`
 
 _[innerHTML ](https://www.javascripttutorial.net/javascript-dom/javascript-innerhtml/) - Get and set the HTML content of an element._<br>
-`Syntax : let content = element.innerHTML;`
+_To get the HTML markup contained within an element._<br>
+`Syntax : let content = element.innerHTML;`<br>
+
+_To set the value of innerHTML property._<br>
+`Syntax : element.innerHTML = newHTML;`
 
 _[after ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-after/) - Insert a node after an element._<br>
 `Syntax : Element.after(node)`<br>
