@@ -130,7 +130,8 @@ _[hasAttribute ( )](https://www.javascripttutorial.net/javascript-dom/javascript
 `1. addEventListener() method : Register an event handler.`
 
 ```Plaintext
-The addEventListener() method accepts three arguments: an event name, an event handler function. For example :
+The addEventListener() method accepts three arguments: an event name, an event handler function. 
+For example :
 ```
 
 ```javascript
@@ -145,7 +146,9 @@ btn.addEventListener("click", function (event) {
 `1. removeEventListener() method : Remove an event handler.`
 
 ```Plaintext
-The removeEventListener() removes an event listener that was added via the addEventListener(). However, you need to pass the same arguments as were passed to the addEventListener(). For example :
+The removeEventListener() removes an event listener that was added via the addEventListener(). 
+However, you need to pass the same arguments as were passed to the addEventListener(). 
+For example :
 ```
 
 ```javascript
