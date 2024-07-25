@@ -1,165 +1,134 @@
-# JavaScript DOM ( Document Object Model )
+# _`JavaScript DOM Manipulation Repository`_
 
-## What is the DOM?
+_Welcome to the JavaScript DOM Manipulation Repository! This repository contains a collection of examples and explanations for various DOM manipulation techniques in JavaScript. Whether you are learning about DOM attributes, element styling, element manipulation, or selecting elements, you'll find useful code snippets and examples here._
 
-`DOM stands for Document Object Model. It is a programming interface that allows us to create, change, or remove elements from the document.
-The DOM represents an HTML document as a tree of nodes. A node represents an HTML element.`
+## _`Table of Contents`_
 
-### Let's take a look at this HTML code to better understand the DOM tree structure.
+### _[01. DOM Attributes](https://github.com/SrjAdhikari/JS-DOM/tree/main/Attributes)_
 
-```HTML
-<!DOCTYPE html>
-<html>
-<head>
-   <meta charset="utf-8">
-   <title>Learning the DOM</title>
-</head>
-<body>
-   <!--A simple comment-->
-   <h1>Learning the <b>DOM</b></h1>
-   <p>The DOM is simple.</p>
-</body>
-</html>
+### _[02. Manipulate Element Style](https://github.com/SrjAdhikari/JS-DOM/tree/main/Manipulate_Elements_Style)_
+
+### _[03. Manipulating Elements](https://github.com/SrjAdhikari/JS-DOM/tree/main/Manipulating_Elements)_
+
+### _[04. Select Elements](https://github.com/SrjAdhikari/JS-DOM/tree/main/Selecting_Elements)_
+
+### _[05. DOM Projects](https://github.com/SrjAdhikari/JS-DOM/tree/main/DOM_Projects)_
+
+## _`Topics Covered`_
+
+**_[01. DOM Attributes](https://github.com/SrjAdhikari/JS-DOM/tree/main/Attributes)_**
+
+- _getAttribute()_
+
+- _setAttribute()_
+
+- _removeAttribute()_
+
+- _hasAttribute()_
+
+**_[02. Manipulate Element Style](https://github.com/SrjAdhikari/JS-DOM/tree/main/Manipulate_Elements_Style)_**
+
+- _Learn how to dynamically modify the style of elements using JavaScript._
+
+**_[03. Manipulating Elements](https://github.com/SrjAdhikari/JS-DOM/tree/main/Manipulating_Elements)_**
+
+- _after()_
+
+- _append()_
+
+- _appendChild()_
+
+- _createElement()_
+
+- _insertBefore()_
+
+- _prepend()_
+
+- _removeChild()_
+
+- _replaceChild()_
+
+**_[04. Select Elements](https://github.com/SrjAdhikari/JS-DOM/tree/main/Selecting_Elements)_**
+
+- _getElementsByClassName()_
+
+- _getElementById()_
+
+- _getElementsByName()_
+
+- _getElementsByTagName()_
+
+- _querySelector()_
+
+- _querySelectorAll()_
+
+**_[05. DOM Projects](https://github.com/SrjAdhikari/JS-DOM/tree/main/DOM_Projects)_**
+
+- _[Quote Generator](https://github.com/SrjAdhikari/JS-DOM/tree/main/DOM_Projects/01_Quote_Generator)_
+
+- _[Modal](https://github.com/SrjAdhikari/JS-DOM/tree/main/DOM_Projects/02_Modal)_
+
+- _[FAQ](https://github.com/SrjAdhikari/JS-DOM/tree/main/DOM_Projects/03_FAQ)_
+
+- _[Stop Watch](https://github.com/SrjAdhikari/JS-DOM/tree/main/DOM_Projects/04_Stop_Watch)_
+
+- _[ToDo List](https://github.com/SrjAdhikari/JS-DOM/tree/main/DOM_Projects/05_ToDo_List)_
+
+- _[Form Validation](https://github.com/SrjAdhikari/JS-DOM/tree/main/DOM_Projects/06_Form_Validation)_
+
+- _[Toogle Password Visibility](https://github.com/SrjAdhikari/JS-DOM/tree/main/DOM_Projects/07_Toogle_Password_Visibility)_
+
+## _`How to Use This Repository`_
+
+- _Star the Repository_
+
+- _Navigate to the Repository_
+
+- _Explore the code examples_
+
+## _`Contributing`_
+
+_*Contributions are welcome! If you find any errors or have suggestions for improvement, please open an issue or submit a pull request.*_
+
+- _Fork the repository._
+
+- _Create your feature branch (git checkout -b feature/AmazingFeature)._
+
+- _Commit your changes (git commit -m 'Add some AmazingFeature')._
+
+- _Push to the branch (git push origin feature/AmazingFeature)._
+
+- _Open a pull request._
+
+## _`License`_
+
+```
+The MIT License (MIT)
+
+Copyright (c) 2024 Suraj Adhikari
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
-### If we now convert this into a DOM tree, we'd get the following :
-
-![](https://www.codeguage.com/static/images/content/js/dom-tree-01.png)
-
-## Tree Terminology
-
-`Root Node : The topmost node is where the tree begins and is called the root/parent node. In the case above, the root is the whole HTML document.`
-
-`Children Node : The nodes on the next level with edges connecting them with the root node are children of the root node.`
-
-`Siblings Node : Nodes with the same parent are siblings. Hence, <html> and the doctype declaration nodes are both siblings of each other.`
-
-`The children of <html> are <head> and <body>. The <body> node has three further children nodes <h1>, <p> and <div>. The <p> node has one single child.`
-<br><br>
-
-### A detailed DOM tree representation of the HTML code above :
-
-![](https://www.codeguage.com/static/images/content/js/dom-tree-02.png)
-
-<br><br>
-
-# How to Select Elements in the Document
-
-_[getElementById ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-getelementbyid/) - Select an element by id_ <br>
-`Syntax : const element = document.getElementById(id);`
-
-_[getElementsByName ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-getelementsbyname/) - Select an element by name_<br>
-`Syntax : let elements = document.getElementsByName(name);`
-
-_[getElementsByTagName ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-getelementsbytagname/) - Select an element by a tag name_<br>
-`Syntax : let elements = document.getElementsByTagName(tagName);`
-
-_[getElementsByClassName ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-getelementsbyclassname/) - Select elements by one or more class names_<br>
-`Syntax : let elements = rootElement.getElementsByClassName(names);`
-
-_[querySelector ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-queryselector/) - Select elements by CSS selectors_<br>
-`Syntax : let element = parentNode.querySelector(selector);`
-
-_[querySelectorAll ( ) ]() - Select all of the elements that match the CSS selectors_<br>
-`Syntax : let element = parentNode.querySelectorAll(selector);`
+---
 
 <br>
 
-# How to Manipulate elements to the Document
-
-_[createElement ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-createelement/) - Create a new element._ <br>
-`Syntax : let element = document.createElement(htmlTag);`
-
-_[appendChild ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-appendchild/) - Append a node to a list of child nodes of a specified parent node._<br>
-`Syntax : parentNode.appendChild(childNode);`
-
-_[innerHTML ](https://www.javascripttutorial.net/javascript-dom/javascript-innerhtml/) - Get and set the HTML content of an element._<br>
-_To get the HTML markup contained within an element._<br>
-`Syntax : let content = element.innerHTML;`<br>
-
-_To set the value of innerHTML property._<br>
-`Syntax : element.innerHTML = newHTML;`
-
-_[after ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-after/) - Insert a node after an element._<br>
-`Syntax : Element.after(node)`<br>
-`For example, suppose you have a <h1> element and you want to insert a <p> element after it, you can use the after() method like this : h1.after(p)`<br>
-
-_[append ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-append/) - Insert a node after the last child node of a parent node._<br>
-`Syntax : parentNode.append()`
-
-_[prepend ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-prepend/) - Insert a node before the first child node of a parent node._<br>
-`Syntax : parentNode.prepend()`
-
-_[replaceChild ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-replacechild/) - Replace a child element by a new element._<br>
-`Syntax : parentNode.replaceChild(newChild, oldChild);`
-
-_[removeChild ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-removechild/) - Remove child elements of a node._<br>
-`Syntax : let childNode = parentNode.removeChild(childNode);`
-
-_[insertBefore ( ) ](https://www.javascripttutorial.net/javascript-dom/javascript-insertbefore/) - Insert a new node before an existing node as a child node of a specified parent node._<br>
-`Syntax : parentNode.insertBefore(newNode, existingNode);`
-
-<br>
-
-# How to Manipulate elements Styles
-
-_[style property](https://www.javascripttutorial.net/javascript-dom/javascript-style/) - Get or set inline styles of an element._<br>
-`Syntax : element.style`<br>
-`For example, to set the color of an element to red, you use the following code : element.style.color = 'red';`<br>
-
-<br>
-
-# How to Work with Attributes
-
-_[setAttribute ( )](https://www.javascripttutorial.net/javascript-dom/javascript-setattribute/) - Set the value of a specified attribute on a element._<br>
-`Syntax : element.setAttribute(name, value);`
-
-_[getAttribute ( )](https://www.javascripttutorial.net/javascript-dom/javascript-getattribute/) - Get the value of an attribute on an element._<br>
-`Syntax : let value = element.getAttribute(name);`
-
-_[removeAttribute ( )](https://www.javascripttutorial.net/javascript-dom/javascript-removeattribute/) - Remove an attribute from a specified element._<br>
-`Syntax : element.removeAttribute(name);`
-
-_[hasAttribute ( )](https://www.javascripttutorial.net/javascript-dom/javascript-hasattribute/) - Check if an element has a specified attribute or not._<br>
-`Syntax : let result = element.hasAttribute(name);`
-
-<br>
-
-# DOM Event Handlers
-
-`1. addEventListener() method : Register an event handler.`
-
-```Plaintext
-The addEventListener() method accepts three arguments: an event name, an event handler function. 
-For example :
-```
-
-```javascript
-let btn = document.querySelector("#btn");
-btn.addEventListener("click", function (event) {
-  alert(event.type); // click
-});
-```
-
-<br>
-
-`1. removeEventListener() method : Remove an event handler.`
-
-```Plaintext
-The removeEventListener() removes an event listener that was added via the addEventListener(). 
-However, you need to pass the same arguments as were passed to the addEventListener(). 
-For example :
-```
-
-```javascript
-let btn = document.querySelector("#btn");
-
-// add the event listener
-let showAlert = function () {
-  alert("Clicked!");
-};
-btn.addEventListener("click", showAlert);
-
-// remove the event listener
-btn.removeEventListener("click", showAlert);
-```
+**_`Happy Coding!`_**<br>
+**_`Maintainer : Suraj Adhikari`_**
